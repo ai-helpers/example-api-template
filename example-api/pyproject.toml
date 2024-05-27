@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "example-api"
+version = "0.1.0"
+description = "An API project example"
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+packages = [
+        { include = "example_api", from = "src" }
+    ]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+cachetools = "^5.3.3"
+fastapi = "^0.111.0"
+pandas = "^2.2.2"
+pydantic-settings = "^2.2.1"
+setuptools = "^70.0.0"
+uvicorn = "^0.29.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.plugins."console_scripts"]
+"example-api" = "example_api.cli:start_api"
