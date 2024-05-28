@@ -1,12 +1,12 @@
 import fastapi
 
-from example_api import __version__
-from example_api.endpoints import (root, healthcheck, info, test, predict)
+from api_example import __version__
+from api_example.endpoints import (root, healthcheck, info, test, predict)
 
 #
 app = fastapi.FastAPI(
    title="API",
-   description="An API project example",
+   description="My project description",
    version=__version__,
 )
 

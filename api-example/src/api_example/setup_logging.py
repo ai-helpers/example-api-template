@@ -1,7 +1,7 @@
 import logging
 
-from example_api import __version__
-from example_api.settings.defaults import LOG_LEVEL
+from api_example import __version__
+from api_example.settings.defaults import LOG_LEVEL
 
 
 def setup_logging(log_level: str = LOG_LEVEL) -> dict:

@@ -5,9 +5,9 @@ import pathlib
 from cachetools.func import ttl_cache
 import pandas as pd
 
-from example_api.errors import (APIModelNotFoundError,
+from api_example.errors import (APIModelNotFoundError,
                                  APIModelNotLoadableError)
-from example_api.settings.app_settings import (Settings, get_settings)
+from api_example.settings.app_settings import (Settings, get_settings)
 
 @ttl_cache(maxsize=1, ttl=86400)
 def load_model(settings: Settings):

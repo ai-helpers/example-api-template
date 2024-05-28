@@ -2,7 +2,7 @@ import argparse
 import pydantic
 import typing
 
-from example_api.settings.defaults import (
+from api_example.settings.defaults import (
     MODEL_EXTERNAL_URL,
     DATA_LOADER_MODULE,
     LOCAL_DIR,
@@ -13,7 +13,7 @@ from example_api.settings.defaults import (
     ROOT_PATH,
     WORKERS
 )
-from example_api import __version__
+from api_example import __version__
 
 def _add_version(parser: argparse.ArgumentParser) -> argparse.ArgumentParser:
    parser.add_argument(

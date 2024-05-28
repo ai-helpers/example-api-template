@@ -1,6 +1,6 @@
 import fastapi
 
-from example_api.endpoints.router import router
+from api_example.endpoints.router import router
 
 DEFAULT_OUTPUT = {
     # "feature_1": {"type": "float64", "example": -0.02596975},

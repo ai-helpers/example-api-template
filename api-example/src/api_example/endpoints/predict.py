@@ -4,18 +4,18 @@ import pydantic
 import pandas as pd
 
 
-from example_api.errors import (APIModelNotFoundError,
+from api_example.errors import (APIModelNotFoundError,
                                  APIModelNotLoadableError)
-from example_api.settings.app_settings import (Settings, get_settings)
-from example_api.endpoints.router import router
-from example_api.load_model import load_model
+from api_example.settings.app_settings import (Settings, get_settings)
+from api_example.endpoints.router import router
+from api_example.load_model import load_model
 
 #
 class InputData(pydantic.BaseModel):
    feature_1: float = 10.0
 
 
-endpoint_description = "An API project example."
+endpoint_description = "My project description."
 
 @router.post('/predict', description=endpoint_description)
 def predict(request_data: InputData) -> dict:

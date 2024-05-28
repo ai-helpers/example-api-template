@@ -6,8 +6,8 @@ from typing import Optional, Union
 
 import pydantic_settings
 
-from example_api.settings.args import parse_args
-from example_api.settings.defaults import (
+from api_example.settings.args import parse_args
+from api_example.settings.defaults import (
     MODEL_EXTERNAL_URL,
     DATA_LOADER_MODULE,
     LOCAL_DIR,

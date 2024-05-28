@@ -1,7 +1,7 @@
 import pathlib
 import fastapi
 
-from example_api.endpoints.router import router
+from api_example.endpoints.router import router
 
 endpoint_description = """
 Dump the content of the data/info.txt file when it exists.
