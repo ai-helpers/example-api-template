@@ -1,4 +1,4 @@
-**API - API Example**
+# **API - API Example**
 
 - **Template**: [AI Helpers API template](https://github.com/ai-helpers/api-cookiecutter-template)
 - **Description**: My project description
