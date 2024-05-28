@@ -1,9 +1,10 @@
 {
   "template": "https://github.com/ai-helpers/api-cookiecutter-template",
-  "commit": "d41076cde33fb381c27a705c56c9abc85348319c",
+  "commit": "1ff75c6287692dcb0884f06d82f95622d384d003",
   "checkout": null,
   "context": {
     "cookiecutter": {
+      "_tech_name": "fastapi",
       "project_long_name": "API Example",
       "project_name_dashes": "api-example",
       "project_name_underscores": "api_example",

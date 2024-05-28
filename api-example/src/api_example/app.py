@@ -1,7 +1,7 @@
 import fastapi
 
 from api_example import __version__
-from api_example.endpoints import (root, healthcheck, info, test, predict)
+from api_example.endpoints import (root, health, info, test, predict)
 
 #
 app = fastapi.FastAPI(
@@ -13,7 +13,7 @@ app = fastapi.FastAPI(
 # Register the endpoints. See the endpoints/ directory
 # for the corresponding source code.
 app.include_router(root.router)
-app.include_router(healthcheck.router)
+app.include_router(health.router)
 app.include_router(info.router)
 app.include_router(test.router)
 app.include_router(predict.router)
