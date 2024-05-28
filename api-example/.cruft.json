@@ -1,6 +1,6 @@
 {
   "template": "https://github.com/ai-helpers/api-cookiecutter-template",
-  "commit": "5ce966254aea3d86f6b6b0ac94f594e12b41b39a",
+  "commit": "d41076cde33fb381c27a705c56c9abc85348319c",
   "checkout": null,
   "context": {
     "cookiecutter": {
