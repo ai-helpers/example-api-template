@@ -4,7 +4,6 @@ import pydantic
 import pandas as pd
 
 
-from api_example.errors import APIModelNotFoundError, APIModelNotLoadableError
 from api_example.settings.app_settings import Settings, get_settings
 from api_example.endpoints.router import router
 from api_example.load_model import load_model
