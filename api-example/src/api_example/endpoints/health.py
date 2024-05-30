@@ -8,7 +8,9 @@ Returns "OK" with a 200 status code (meaning that everything is fine).
 That API endpoint may be used for instance for livelyness and readyness probes.
 """
 
-@router.get('/health', description=endpoint_description,
-            status_code=fastapi.status.HTTP_200_OK)
+
+@router.get(
+    "/health", description=endpoint_description, status_code=fastapi.status.HTTP_200_OK
+)
 async def health() -> str:
-   return "OK"
+    return "OK"

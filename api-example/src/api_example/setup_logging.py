@@ -30,5 +30,5 @@ def setup_logging(log_level: str = LOG_LEVEL) -> dict:
             "uvicorn.access": {"propagate": True},
         },
     }
-    
+
     return log_config

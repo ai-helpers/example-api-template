@@ -16,8 +16,9 @@ from api_example.settings.defaults import (
     SVR_HOST,
     SVR_PORT,
     ROOT_PATH,
-    WORKERS
+    WORKERS,
 )
+
 
 class HashableBaseSettings(pydantic_settings.BaseSettings):
     def __hash__(self):
@@ -57,6 +58,6 @@ def get_settings() -> Settings:
         svr_host=resulting_args.host,
         svr_port=resulting_args.port,
         root_path=resulting_args.root_path,
-        workers=resulting_args.workers
+        workers=resulting_args.workers,
     )
     return settings

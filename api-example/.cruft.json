@@ -1,6 +1,6 @@
 {
   "template": "https://github.com/ai-helpers/api-cookiecutter-template",
-  "commit": "1ff75c6287692dcb0884f06d82f95622d384d003",
+  "commit": "7a0aa37a0949533c026fb04821434938ba0ac9bb",
   "checkout": null,
   "context": {
     "cookiecutter": {
@@ -10,6 +10,8 @@
       "project_name_underscores": "api_example",
       "version": "0.1.0",
       "description": "My project description",
+      "python_version": "3.8",
+      "poetry_version": "1.8.1",
       "_template": "https://github.com/ai-helpers/api-cookiecutter-template"
     }
   },

@@ -2,7 +2,7 @@ import logging
 import uvicorn
 
 from api_example.setup_logging import setup_logging
-from api_example.settings.app_settings import (Settings, get_settings)
+from api_example.settings.app_settings import Settings, get_settings
 
 
 def start_api() -> None:
@@ -11,8 +11,10 @@ def start_api() -> None:
 
     logger = logging.getLogger(__name__)
     logger.setLevel(settings.log_level)
-    logger.info(f'[API] Log level set to {settings.log_level}')
-    logger.info(f'[API] API service starting on {settings.svr_host}:{settings.svr_port}')
+    logger.info(f"[API] Log level set to {settings.log_level}")
+    logger.info(
+        f"[API] API service starting on {settings.svr_host}:{settings.svr_port}"
+    )
 
     uvicorn.run(
         "api_example.app:app",
@@ -21,8 +23,9 @@ def start_api() -> None:
         root_path=settings.root_path,
         log_config=log_config,
         log_level=settings.log_level.lower(),
-        workers=settings.workers
+        workers=settings.workers,
     )
-    
+
+
 if __name__ == "__main__":
     start_api()
