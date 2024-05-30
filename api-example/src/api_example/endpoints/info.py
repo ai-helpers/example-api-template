@@ -1,5 +1,6 @@
 import pathlib
 import fastapi
+from fastapi.responses import PlainTextResponse
 
 from api_example.endpoints.router import router
 
@@ -10,7 +11,7 @@ The source for that info.txt file is
 
 
 @router.get(
-    "/info", description=endpoint_description, status_code=fastapi.status.HTTP_200_OK
+    "/info", description=endpoint_description, status_code=fastapi.status.HTTP_200_OK, response_class=PlainTextResponse
 )
 async def info():
     file_content = None
