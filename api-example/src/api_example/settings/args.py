@@ -133,27 +133,27 @@ def _add_model_external_url(parser: argparse.ArgumentParser) -> argparse.Argumen
 
 
 def _get_arg_parser() -> argparse.ArgumentParser:
-   parser = argparse.ArgumentParser(
-      description=(
-         "API command-line (CLI) tool. "
-         "That utility launches a Uvicorn/FastAPI server, "
-      )
-   )
+    parser = argparse.ArgumentParser(
+        description=(
+            "API command-line (CLI) tool. " "That utility launches a Uvicorn/FastAPI server, "
+        )
+    )
 
-   parser = _add_version(parser)
-   parser = _add_log_level(parser)
-   parser = _add_host(parser)
-   parser = _add_port(parser)
-   parser = _add_workers(parser)
-   parser = _add_root_path(parser)
-   parser = _add_data_loader_module(parser)
-   parser = _add_local_dir(parser)
-   parser = _add_local_temp_dir(parser)
-   parser = _add_model_external_url(parser)
-   
-   return parser
+    parser = _add_version(parser)
+    parser = _add_log_level(parser)
+    parser = _add_host(parser)
+    parser = _add_port(parser)
+    parser = _add_workers(parser)
+    parser = _add_root_path(parser)
+    parser = _add_data_loader_module(parser)
+    parser = _add_local_dir(parser)
+    parser = _add_local_temp_dir(parser)
+    parser = _add_model_external_url(parser)
+
+    return parser
+
 
 def parse_args(args: typing.List[str] | None = None) -> argparse.Namespace:
-   parser: argparse.ArgumentParser = _get_arg_parser()
-   resulting_args: argparse.Namespace = parser.parse_args(args)
-   return resulting_args
+    parser: argparse.ArgumentParser = _get_arg_parser()
+    resulting_args: argparse.Namespace = parser.parse_args(args)
+    return resulting_args
