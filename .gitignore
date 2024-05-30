@@ -3,6 +3,8 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+**.api_example_to_delete/
+
 # C extensions
 *.so
 
