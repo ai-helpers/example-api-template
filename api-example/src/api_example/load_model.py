@@ -17,17 +17,14 @@ def load_model(settings: Settings):
     model_external_url: str = settings.model_external_url
 
     logger.info(
-        "[API::load_model] Machine Learning (ML) model "
-        f"pickle file: {model_external_url}"
+        "[API::load_model] Machine Learning (ML) model " f"pickle file: {model_external_url}"
     )
 
     # Read the Pickled model from the file-system
     model_filepath = pathlib.Path(model_external_url)
     model = None
     if not model_filepath.exists():
-        err_msg = (
-            f"[API::load_model] The model file " "({model_filepath}) cannot be found"
-        )
+        err_msg = f"[API::load_model] The model file " "({model_filepath}) cannot be found"
         raise APIModelNotFoundError(err_msg)
 
     with open(model_filepath, "rb") as f:
@@ -42,8 +39,7 @@ def load_model(settings: Settings):
         raise APIModelNotLoadableError(err_msg)
 
     logging.info(
-        "[API::load_model] The ML model has been "
-        f"successfully loaded from {model_filepath}"
+        "[API::load_model] The ML model has been " f"successfully loaded from {model_filepath}"
     )
 
     return model

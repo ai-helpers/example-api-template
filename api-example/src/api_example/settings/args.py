@@ -137,8 +137,7 @@ def _add_model_external_url(parser: argparse.ArgumentParser) -> argparse.Argumen
 def _get_arg_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description=(
-            "API command-line (CLI) tool. "
-            "That utility launches a Uvicorn/FastAPI server, "
+            "API command-line (CLI) tool. " "That utility launches a Uvicorn/FastAPI server, "
         )
     )
 

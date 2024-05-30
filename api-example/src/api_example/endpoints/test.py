@@ -24,9 +24,7 @@ ordinary predictions.
 """
 
 
-@router.get(
-    "/test", description=endpoint_description, status_code=fastapi.status.HTTP_200_OK
-)
+@router.get("/test", description=endpoint_description, status_code=fastapi.status.HTTP_200_OK)
 async def test() -> dict:
     output_data = format_output_json(DEFAULT_OUTPUT)
     return output_data

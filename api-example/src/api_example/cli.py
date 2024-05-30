@@ -12,9 +12,7 @@ def start_api() -> None:
     logger = logging.getLogger(__name__)
     logger.setLevel(settings.log_level)
     logger.info(f"[API] Log level set to {settings.log_level}")
-    logger.info(
-        f"[API] API service starting on {settings.svr_host}:{settings.svr_port}"
-    )
+    logger.info(f"[API] API service starting on {settings.svr_host}:{settings.svr_port}")
 
     uvicorn.run(
         "api_example.app:app",
