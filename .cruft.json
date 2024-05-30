@@ -10,7 +10,7 @@
       "project_name_underscores": "api_example",
       "version": "0.1.0",
       "description": "My project description",
-      "python_version": "3.8",
+      "python_version": "3.10",
       "poetry_version": "1.8.1",
       "_template": "https://github.com/ai-helpers/api-cookiecutter-template"
     }
