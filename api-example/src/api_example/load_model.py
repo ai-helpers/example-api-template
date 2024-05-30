@@ -14,10 +14,9 @@ def load_model(settings: Settings):
     logger.setLevel(settings.log_level)
 
     model_external_url: Union[str, pathlib.Path] = settings.model_external_url
-
-    logger.info(
-        "[API::load_model] Machine Learning (ML) model " f"pickle file: {model_external_url}"
-    )
+   
+    logger.info("[API::load_model] Machine Learning (ML) model " \
+                f"pickle file: {model_external_url}")
 
     # Read the Pickled model from the file-system
     model_filepath = pathlib.Path(model_external_url)
