@@ -78,7 +78,7 @@
 <span class="kn">import</span> <span class="nn">typing</span>
 
 <span class="kn">from</span> <span class="nn">api_example.settings.defaults</span> <span class="kn">import</span> <span class="p">(</span>
-    <span class="n">MODEL_EXTERNAL_URL</span><span class="p">,</span>
+    <span class="n">AI_MODEL_EXTERNAL_URL</span><span class="p">,</span>
     <span class="n">DATA_LOADER_MODULE</span><span class="p">,</span>
     <span class="n">LOCAL_DIR</span><span class="p">,</span>
     <span class="n">LOCAL_TEMP_DIR</span><span class="p">,</span>
@@ -196,38 +196,36 @@
     <span class="k">return</span> <span class="n">parser</span>
 
 
-<span class="k">def</span> <span class="nf">_add_model_external_url</span><span class="p">(</span><span class="n">parser</span><span class="p">:</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">:</span>
-    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
-        <span class="s2">&quot;-m&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;--model-external-url&quot;</span><span class="p">,</span>
-        <span class="n">help</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;URL (if remote) or file-path (if local) of the Pickled/serialized ML model (e.g., &#39;</span><span class="si">{</span><span class="n">MODEL_EXTERNAL_URL</span><span class="si">}</span><span class="s2">&#39;).&quot;</span><span class="p">,</span>
-        <span class="n">dest</span><span class="o">=</span><span class="s2">&quot;model_external_url&quot;</span><span class="p">,</span>
-        <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store&quot;</span><span class="p">,</span>
-        <span class="n">default</span><span class="o">=</span><span class="n">MODEL_EXTERNAL_URL</span><span class="p">,</span>
-    <span class="p">)</span>
-    <span class="k">return</span> <span class="n">parser</span>
-
+<span class="k">def</span> <span class="nf">_add_ai_model_external_url</span><span class="p">(</span><span class="n">parser</span><span class="p">:</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">:</span>
+   <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+      <span class="s2">&quot;-m&quot;</span><span class="p">,</span> <span class="s2">&quot;--model-external-url&quot;</span><span class="p">,</span>
+      <span class="n">help</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;URL (if remote) or file-path (if local) of the Pickled/serialized ML model (e.g., &#39;</span><span class="si">{</span><span class="n">AI_MODEL_EXTERNAL_URL</span><span class="si">}</span><span class="s2">&#39;).&quot;</span><span class="p">,</span>
+      <span class="n">dest</span><span class="o">=</span><span class="s2">&quot;ai_model_external_url&quot;</span><span class="p">,</span>
+      <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store&quot;</span><span class="p">,</span>
+      <span class="n">default</span><span class="o">=</span><span class="n">AI_MODEL_EXTERNAL_URL</span>
+   <span class="p">)</span>
+   <span class="k">return</span> <span class="n">parser</span>
 
 <span class="k">def</span> <span class="nf">_get_arg_parser</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">:</span>
-    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span>
-        <span class="n">description</span><span class="o">=</span><span class="p">(</span>
-            <span class="s2">&quot;API command-line (CLI) tool. &quot;</span> <span class="s2">&quot;That utility launches a Uvicorn/FastAPI server, &quot;</span>
-        <span class="p">)</span>
-    <span class="p">)</span>
+   <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span>
+      <span class="n">description</span><span class="o">=</span><span class="p">(</span>
+         <span class="s2">&quot;API command-line (CLI) tool. &quot;</span>
+         <span class="s2">&quot;That utility launches a Uvicorn/FastAPI server, &quot;</span>
+      <span class="p">)</span>
+   <span class="p">)</span>
 
-    <span class="n">parser</span> <span class="o">=</span> <span class="n">_add_version</span><span class="p">(</span><span class="n">parser</span><span class="p">)</span>
-    <span class="n">parser</span> <span class="o">=</span> <span class="n">_add_log_level</span><span class="p">(</span><span class="n">parser</span><span class="p">)</span>
-    <span class="n">parser</span> <span class="o">=</span> <span class="n">_add_host</span><span class="p">(</span><span class="n">parser</span><span class="p">)</span>
-    <span class="n">parser</span> <span class="o">=</span> <span class="n">_add_port</span><span class="p">(</span><span class="n">parser</span><span class="p">)</span>
-    <span class="n">parser</span> <span class="o">=</span> <span class="n">_add_workers</span><span class="p">(</span><span class="n">parser</span><span class="p">)</span>
-    <span class="n">parser</span> <span class="o">=</span> <span class="n">_add_root_path</span><span class="p">(</span><span class="n">parser</span><span class="p">)</span>
-    <span class="n">parser</span> <span class="o">=</span> <span class="n">_add_data_loader_module</span><span class="p">(</span><span class="n">parser</span><span class="p">)</span>
-    <span class="n">parser</span> <span class="o">=</span> <span class="n">_add_local_dir</span><span class="p">(</span><span class="n">parser</span><span class="p">)</span>
-    <span class="n">parser</span> <span class="o">=</span> <span class="n">_add_local_temp_dir</span><span class="p">(</span><span class="n">parser</span><span class="p">)</span>
-    <span class="n">parser</span> <span class="o">=</span> <span class="n">_add_model_external_url</span><span class="p">(</span><span class="n">parser</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">parser</span>
-
+   <span class="n">parser</span> <span class="o">=</span> <span class="n">_add_version</span><span class="p">(</span><span class="n">parser</span><span class="p">)</span>
+   <span class="n">parser</span> <span class="o">=</span> <span class="n">_add_log_level</span><span class="p">(</span><span class="n">parser</span><span class="p">)</span>
+   <span class="n">parser</span> <span class="o">=</span> <span class="n">_add_host</span><span class="p">(</span><span class="n">parser</span><span class="p">)</span>
+   <span class="n">parser</span> <span class="o">=</span> <span class="n">_add_port</span><span class="p">(</span><span class="n">parser</span><span class="p">)</span>
+   <span class="n">parser</span> <span class="o">=</span> <span class="n">_add_workers</span><span class="p">(</span><span class="n">parser</span><span class="p">)</span>
+   <span class="n">parser</span> <span class="o">=</span> <span class="n">_add_root_path</span><span class="p">(</span><span class="n">parser</span><span class="p">)</span>
+   <span class="n">parser</span> <span class="o">=</span> <span class="n">_add_data_loader_module</span><span class="p">(</span><span class="n">parser</span><span class="p">)</span>
+   <span class="n">parser</span> <span class="o">=</span> <span class="n">_add_local_dir</span><span class="p">(</span><span class="n">parser</span><span class="p">)</span>
+   <span class="n">parser</span> <span class="o">=</span> <span class="n">_add_local_temp_dir</span><span class="p">(</span><span class="n">parser</span><span class="p">)</span>
+   <span class="n">parser</span> <span class="o">=</span> <span class="n">_add_ai_model_external_url</span><span class="p">(</span><span class="n">parser</span><span class="p">)</span>
+   
+   <span class="k">return</span> <span class="n">parser</span>
 
 <div class="viewcode-block" id="parse_args">
 <a class="viewcode-back" href="../../../_api/api_example.settings.html#api_example.settings.args.parse_args">[docs]</a>

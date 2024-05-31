@@ -84,7 +84,7 @@
 
 <span class="kn">from</span> <span class="nn">api_example.settings.args</span> <span class="kn">import</span> <span class="n">parse_args</span>
 <span class="kn">from</span> <span class="nn">api_example.settings.defaults</span> <span class="kn">import</span> <span class="p">(</span>
-    <span class="n">MODEL_EXTERNAL_URL</span><span class="p">,</span>
+    <span class="n">AI_MODEL_EXTERNAL_URL</span><span class="p">,</span>
     <span class="n">DATA_LOADER_MODULE</span><span class="p">,</span>
     <span class="n">LOCAL_DIR</span><span class="p">,</span>
     <span class="n">LOCAL_TEMP_DIR</span><span class="p">,</span>
@@ -107,7 +107,7 @@
 <div class="viewcode-block" id="Settings">
 <a class="viewcode-back" href="../../../_api/api_example.settings.html#api_example.settings.app_settings.Settings">[docs]</a>
 <span class="k">class</span> <span class="nc">Settings</span><span class="p">(</span><span class="n">HashableBaseSettings</span><span class="p">):</span>
-    <span class="n">model_external_url</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">]</span> <span class="o">=</span> <span class="n">MODEL_EXTERNAL_URL</span>
+    <span class="n">ai_model_external_url</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">]</span> <span class="o">=</span> <span class="n">AI_MODEL_EXTERNAL_URL</span>
     <span class="n">data_loader_module</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">DATA_LOADER_MODULE</span>
     <span class="n">local_dir</span><span class="p">:</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span> <span class="o">=</span> <span class="n">LOCAL_DIR</span>
     <span class="n">local_temp_dir</span><span class="p">:</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span> <span class="o">=</span> <span class="n">LOCAL_TEMP_DIR</span>
@@ -134,7 +134,7 @@
         <span class="n">log_level_arg</span> <span class="o">=</span> <span class="s2">&quot;DEBUG&quot;</span>
 
     <span class="n">settings</span><span class="p">:</span> <span class="n">Settings</span> <span class="o">=</span> <span class="n">Settings</span><span class="p">(</span>
-        <span class="n">model_external_url</span><span class="o">=</span><span class="n">resulting_args</span><span class="o">.</span><span class="n">model_external_url</span><span class="p">,</span>
+        <span class="n">ai_model_external_url</span><span class="o">=</span><span class="n">resulting_args</span><span class="o">.</span><span class="n">ai_model_external_url</span><span class="p">,</span>
         <span class="n">data_loader_module</span><span class="o">=</span><span class="n">resulting_args</span><span class="o">.</span><span class="n">data_loader_module</span><span class="p">,</span>
         <span class="n">local_dir</span><span class="o">=</span><span class="n">resulting_args</span><span class="o">.</span><span class="n">local_dir</span><span class="p">,</span>
         <span class="n">local_temp_dir</span><span class="o">=</span><span class="n">resulting_args</span><span class="o">.</span><span class="n">local_temp_dir</span><span class="p">,</span>

@@ -91,14 +91,13 @@
     <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
     <span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">settings</span><span class="o">.</span><span class="n">log_level</span><span class="p">)</span>
 
-    <span class="n">model_external_url</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">]</span> <span class="o">=</span> <span class="n">settings</span><span class="o">.</span><span class="n">model_external_url</span>
-
-    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
-        <span class="s2">&quot;[API::load_model] Machine Learning (ML) model &quot;</span> <span class="sa">f</span><span class="s2">&quot;pickle file: </span><span class="si">{</span><span class="n">model_external_url</span><span class="si">}</span><span class="s2">&quot;</span>
-    <span class="p">)</span>
+    <span class="n">ai_model_external_url</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">]</span> <span class="o">=</span> <span class="n">settings</span><span class="o">.</span><span class="n">ai_model_external_url</span>
+   
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;[API::load_model] Machine Learning (ML) model &quot;</span> \
+                <span class="sa">f</span><span class="s2">&quot;pickle file: </span><span class="si">{</span><span class="n">ai_model_external_url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
     <span class="c1"># Read the Pickled model from the file-system</span>
-    <span class="n">model_filepath</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="n">model_external_url</span><span class="p">)</span>
+    <span class="n">model_filepath</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="n">ai_model_external_url</span><span class="p">)</span>
     <span class="n">model</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">model_filepath</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
         <span class="n">err_msg</span> <span class="o">=</span> <span class="s2">&quot;[API::load_model] The model file &quot;</span> <span class="s2">&quot;(</span><span class="si">{model_filepath}</span><span class="s2">) cannot be found&quot;</span>
