@@ -2,7 +2,7 @@ import argparse
 import typing
 
 from api_example.settings.defaults import (
-    MODEL_EXTERNAL_URL,
+    AI_MODEL_EXTERNAL_URL,
     DATA_LOADER_MODULE,
     LOCAL_DIR,
     LOCAL_TEMP_DIR,
@@ -120,38 +120,36 @@ def _add_local_temp_dir(parser: argparse.ArgumentParser) -> argparse.ArgumentPar
     return parser
 
 
-def _add_model_external_url(parser: argparse.ArgumentParser) -> argparse.ArgumentParser:
-    parser.add_argument(
-        "-m",
-        "--model-external-url",
-        help=f"URL (if remote) or file-path (if local) of the Pickled/serialized ML model (e.g., '{MODEL_EXTERNAL_URL}').",
-        dest="model_external_url",
-        action="store",
-        default=MODEL_EXTERNAL_URL,
-    )
-    return parser
-
+def _add_ai_model_external_url(parser: argparse.ArgumentParser) -> argparse.ArgumentParser:
+   parser.add_argument(
+      "-m", "--model-external-url",
+      help=f"URL (if remote) or file-path (if local) of the Pickled/serialized ML model (e.g., '{AI_MODEL_EXTERNAL_URL}').",
+      dest="ai_model_external_url",
+      action="store",
+      default=AI_MODEL_EXTERNAL_URL
+   )
+   return parser
 
 def _get_arg_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(
-        description=(
-            "API command-line (CLI) tool. " "That utility launches a Uvicorn/FastAPI server, "
-        )
-    )
+   parser = argparse.ArgumentParser(
+      description=(
+         "API command-line (CLI) tool. "
+         "That utility launches a Uvicorn/FastAPI server, "
+      )
+   )
 
-    parser = _add_version(parser)
-    parser = _add_log_level(parser)
-    parser = _add_host(parser)
-    parser = _add_port(parser)
-    parser = _add_workers(parser)
-    parser = _add_root_path(parser)
-    parser = _add_data_loader_module(parser)
-    parser = _add_local_dir(parser)
-    parser = _add_local_temp_dir(parser)
-    parser = _add_model_external_url(parser)
-
-    return parser
-
+   parser = _add_version(parser)
+   parser = _add_log_level(parser)
+   parser = _add_host(parser)
+   parser = _add_port(parser)
+   parser = _add_workers(parser)
+   parser = _add_root_path(parser)
+   parser = _add_data_loader_module(parser)
+   parser = _add_local_dir(parser)
+   parser = _add_local_temp_dir(parser)
+   parser = _add_ai_model_external_url(parser)
+   
+   return parser
 
 def parse_args(args: typing.List[str] | None = None) -> argparse.Namespace:
     parser: argparse.ArgumentParser = _get_arg_parser()
